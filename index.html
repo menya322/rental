@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RentPro - Landlord Management System</title>
+    <meta name="description" content="Streamline your property management with our comprehensive landlord software. Manage tenants, properties, and finances efficiently.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <!-- Bootstrap & Plugins CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/accordion_1.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_TRACKING_ID');
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #2e7d32;
+        }
+        
+        /* Header Styles */
+        .header-area {
+            background-color: white;
+        }
+        
+        .nav a {
+            color: var(--primary-color);
+        }
+        
+        .nav a:hover, .nav a.active {
+            color: var(--secondary-color);
+        }
+        
+        .btn-nav-line {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-nav-line:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .menu-trigger span {
+            background-color: var(--primary-color);
+        }
+        
+        .menu-trigger:hover span {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Hero Section */
+        .welcome-area {
+            position: relative;
+        }
+        
+        .welcome-bg {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+        
+        .welcome-content h1 span {
+            color: var(--primary-color);
+        }
+        
+        .btn-primary-line {
+            color: white;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border: none;
+        }
+        
+        .btn-primary-line:hover {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .app-item .icon {
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 7px;
+            min-width: 70px;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, 
+                         rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, 
+                         rgba(0, 0, 0, 0.07) 0px 1px 1px;
+        }
+        
+        .app-item:hover .icon {
+            border-color: var(--secondary-color);
+        }
+        
+        /* Features Section */
+        .section-title {
+            color: var(--primary-color);
+        }
+        
+        .home-services-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .home-services-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.1);
+        }
+        
+        .home-services-item.active {
+            border-color: var(--secondary-color);
+            background-color: rgba(46, 125, 50, 0.05);
+        }
+        
+        .home-services-item i {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .home-services-item.active i {
+            color: var(--secondary-color);
+        }
+        
+        .services-title {
+            color: var(--primary-color);
+        }
+        
+        .home-services-item.active .services-title {
+            color: var(--secondary-color);
+        }
+        
+        /* Stats Section */
+        .parallax {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 80px 0;
+            color: white;
+        }
+        
+        .count-item strong {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .count-item span {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+        
+        /* Feature Details */
+        .features li {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .features li .count {
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .features li .text .title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .download-buttons .btn-primary-line {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        
+        .download-buttons .btn-primary-line:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Pricing Section */
+        .pricing-card {
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            border-top: 5px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .pricing-card h2 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .pricing-card .price {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .pricing-card .yearly .save {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .pricing-card ul.features li {
+            border-left: none;
+            padding-left: 0;
+            margin-bottom: 10px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .pricing-card ul.features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .btn-store {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            overflow: hidden;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-store:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-store img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .note {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        /* Footer */
+        .bg-dark {
+            background-color: #F0F8FF !important;
+            color: #333;
+        }
+        
+        .btn-outline-light {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-light:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: white;
+        }
+        
+        /* Preloader */
+        .dot {
+            background-color: var(--primary-color);
+        }
+        
+        /* Animations */
+        .scale-this {
+            animation: scale 1.5s ease-in-out;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 1px 1px, 
+                         rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, 
+                         rgba(0, 0, 0, 0.07) 0px 1px 1px;
+        }
+        
+        @keyframes scale {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="loader-wrapper">
+        <div class="center">
+            <div class="dot dot-one"></div>
+            <div class="dot dot-two"></div>
+            <div class="dot dot-three"></div>
+            <div class="dot dot-four"></div>
+            <div class="dot dot-five"></div>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="main-nav">
+                        <a href="/" class="logo">
+                            <img src="images/logo.png" alt="RentDirect Logo" width="80" height="auto">
+                        </a>
+                        <ul class="nav">
+                            <li><a href="index.html" class="active">HOME</a></li>
+                            <li><a href="features.html">FEATURES</a></li>
+                            <li><a href="pricing.html">PRICING</a></li>
+                            <li><a href="about.html">ABOUT US</a></li>
+                            <li><a href="contact.html" class="btn-nav-line">CONTACT US</a></li>
+                        </ul>
+                       
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="welcome-area">
+        <div class="welcome-bg" data-bg="images/hero-bg.jpg">
+            <img src="images/bg-bottom.svg" alt="">
+        </div>
+        <div class="welcome-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 align-self-center">
+                        <h1>Simplify Property Management</h1>
+                        <p>Manage properties, tenants, and finances all in one place. Save time, reduce paperwork, and maximize your rental income.</p>
+                        <div class="row">
+                            <a href="#" class="btn-primary-line col-md-5 download">
+                                <i class="fas fa-mobile-alt"></i> Get Mobile App
+                            </a>
+                            <div class="col-md-1"></div>
+                            <a href="#" class="btn-primary-line col-md-5 download">
+                                <i class="fas fa-desktop"></i> Web Dashboard
+                            </a>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-5 align-self-center">
+                        <div class="apps">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-3 col-3">
+                                        <a href="#" class="app-item">
+                                            <div class="icon">
+                                               <i class="fas fa-chart-line" style="font-size: 2.5rem; color: #f1c40f;"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 col-3">
+                                        <a href="#" class="app-item">
+                                            <div class="icon">
+                                            <i class="fas fa-users" style="font-size: 2.5rem; color: #2ecc71;"></i>
+
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 col-3">
+                                        <a href="#" class="app-item">
+                                            <div class="icon">
+                                                <i class="fas fa-building" style="font-size: 2.5rem; color: #3498db;"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3 col-3">
+                                        <a href="#" class="app-item">
+                                            <div class="icon">
+                                                                <i class="fas fa-tools" style="font-size: 2.5rem; color: #e74c3c;"></i>                               
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features Section -->
+    <section class="section services-section pbottom-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 align-self-bottom">
+                    <div class="d-none d-xl-block d-lg-block" style="margin-top: 100px;"></div>
+                    <div class="left-heading">
+                        <h2 class="section-title">All-in-One Property Management Solution</h2>
+                    </div>
+                    <div class="left-text">
+                        <p><strong>Stop juggling spreadsheets.</strong> RentPro gives you everything you need to manage your rental properties efficiently.</p>
+                        <p>From tenant screening to maintenance requests, our platform automates the tedious tasks so you can focus on growing your portfolio.</p>
+                        <p><strong>Join thousands of landlords</strong> who have transformed their property management with RentPro.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="#" class="btn-primary-line scale-this" style="width: 70%">
+                                <i class="fas fa-rocket"></i> Start Free Trial
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offset-lg-1 col-lg-6 align-self-center">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <a href="#" class="home-services-item mtop-70 scale-this">
+                                <i class="fas fa-building"></i>
+                                <h5 class="services-title"><b>Property Management</b></h5>
+                                <p>Track all your properties in one dashboard with detailed analytics.</p>
+                            </a>
+                            <a href="#" class="home-services-item scale-this">
+                                <i class="fas fa-users"></i>
+                                <h5 class="services-title"><b>Tenant Management</b></h5>
+                                <p>Screen tenants, manage leases, and handle communications.</p>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <a href="#" class="home-services-item active scale-this">
+                                <i class="fas fa-dollar-sign"></i>
+                                <h5 class="services-title"><b>Financial Tracking</b></h5>
+                                <p>Automated rent collection, expense tracking, and financial reports.</p>
+                            </a>
+                            <a href="#" class="home-services-item scale-this">
+                                <i class="fas fa-tools"></i>
+                                <h5 class="services-title"><b>Maintenance</b></h5>
+                                <p>Streamline maintenance requests and vendor management.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Stats Section -->
+    <section class="parallax">
+        <div class="parallax-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="count-item">
+                            <strong>10,000+</strong>
+                            <span>🏠 Properties Managed</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="count-item">
+                            <strong>95%</strong>
+                            <span>⏱️ Time Saved</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="count-item">
+                            <strong>4.8/5</strong>
+                            <span>Customer Rating</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="count-item">
+                            <strong>24/7</strong>
+                            <span>🛠️ Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature Details -->
+    <section class="section background">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 align-self-center">
+                    <img src="images/dashboard.png" class="img-fluid d-block mx-auto lazy" alt="Property Dashboard">
+                </div>
+                <div class="col-lg-7 align-self-center">
+                    <ul class="features">
+                        <li>
+                            <div class="count">
+                                <span>1</span>
+                            </div>
+                            <div class="text">
+                                <h5 class="title"><b>Comprehensive Property Dashboard</b></h5>
+                                <p>Get a bird's eye view of all your properties with key metrics, occupancy rates, and financial performance at a glance.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="count">
+                                <span>2</span>
+                            </div>
+                            <div class="text">
+                                <h5 class="title"><b>Automated Rent Collection</b></h5>
+                                <p>Never chase late payments again. Our system automates rent collection, sends reminders, and tracks payment history.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="col-lg-12">
+                        <div class="download-buttons">
+                            <a href="#" class="btn-primary-line">
+                                <i class="fas fa-play"></i> Watch Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <h2>Starter Plan</h2>
+                        <p class="subheading">Perfect for new landlords</p>
+                        <div class="price">15000 UGX<span class="per">/mo</span></div>
+                        <p class="yearly">Billed annually at <span class="save">$228</span></p>
+                        <ul class="features">
+                            <li><strong>Up to 5</strong> properties</li>
+                            <li><strong>Basic</strong> tenant screening</li>
+                            <li><strong>Online</strong> rent collection</li>
+                            <li><strong>Maintenance</strong> tracking</li>
+                            <li><strong>Email</strong> support</li>
+                        </ul>
+                        <div class="store-buttons">
+                            <a href="#" class="btn-store">
+                                <img src="images/google-play.png" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                        <p class="note">Start your 14-day free trial</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <h2>Professional Plan</h2>
+                        <p class="subheading">For growing portfolios</p>
+                        <div class="price"> 25000 UGX<span class="per">/mo</span></div>
+                        <p class="yearly">Billed annually at <span class="save">$588</span></p>
+                        <ul class="features">
+                            <li><strong>Up to 25</strong> properties</li>
+                            <li><strong>Advanced</strong> tenant screening</li>
+                            <li><strong>Automated</strong> rent collection</li>
+                            <li><strong>Priority</strong> maintenance</li>
+                            <li><strong>Phone & email</strong> support</li>
+                            <li><strong>Custom</strong> reports</li>
+                        </ul>
+                        <div class="store-buttons">
+                            <a href="#" class="btn-store">
+                                <img src="images/google-play.png" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                        <p class="note">Start your 14-day free trial</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pricing-card">
+                        <h2>Enterprise Plan</h2>
+                        <p class="subheading">For large portfolios</p>
+                        <div class="price">55,000 UGX<span class="per">/mo</span></div>
+                        <p class="yearly">Billed annually at <span class="save">$1188</span></p>
+                        <ul class="features">
+                            <li><strong>Unlimited</strong> properties</li>
+                            <li><strong>Premium</strong> tenant screening</li>
+                            <li><strong>Full automation</strong> suite</li>
+                            <li><strong>24/7</strong> dedicated support</li>
+                            <li><strong>API</strong> access</li>
+                            <li><strong>Custom</strong> integrations</li>
+                        </ul>
+                        <div class="store-buttons">
+                            <a href="#" class="btn-store">
+                                <img src="images/google-play.png" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                        <p class="note">Contact sales for demo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-dark text-center">
+        <div class="container p-2 pb-0">
+            <div class="row">
+                <div class="col-md-7 col-sm-12 col-lg-7" style="margin-top: 20px;">
+                    <p>© 2025 RentPro. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-1 d-sm-none col-lg-1"></div>
+                <div class="col-md-4 col-sm-12 col-lg-4" style="margin-top: 10px;">
+                    <section class="mb-4">
+                        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/imgfix.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/jquery.lazy.min.js"></script>
+    
+    <script>
+        $(function() {
+            $('.lazy').lazy({
+                placeholder: "images/placeholder.gif"
+            });
+        });
+    </script>
+</body>
+</html>

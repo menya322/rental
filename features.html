@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Property Management Features | RentPro</title>
+    <meta name="description" content="Discover RentPro's comprehensive property management features: Bulk SMS & Email, Debt Control, Document Management, Landlord Statements, Reports, and Updated Tenant Records. Streamline your property management today."/>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Bootstrap & Plugins CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/accordion_1.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #2e7d32;
+        }
+        
+        /* Reusing existing styles from previous pages */
+        .blog-post-thumb .post-footer {
+            overflow: hidden;
+            border-bottom: none;
+            border-top: none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        
+        .app-single .header {
+            border-bottom: none;
+        }
+        
+        .mobile-margin { 
+            margin-top: 10px; 
+        }
+        
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: initial !important;
+            margin-left: 30px;
+        }
+        
+        .stars > li, .nav > li, .footer-nav > li, .social > li, .post-meta > li, .share > li {
+            list-style: none !important;
+            margin-left: 0;
+        }
+        
+        .blog-post-thumb .img {
+            height: 400px;
+        }
+        
+        .sidebar blockquote {
+            background: #4886FF !important;
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: -3px 1px 5px rgba(0,0,0,.4);
+            border: none;
+            border-radius: 0 5% 0 5% / 0 50% 0 50%;
+            transition: cubic-bezier(0.165, 0.84, 0.44, 1), 400ms;
+        }
+        
+        .sidebar blockquote:hover, .sidebar blockquote:focus {
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+        }
+        
+        .sidebar blockquote .download-buttons a {
+            font-size: 14px !important;
+        }
+        
+        .download {
+            animation: scale 1.5s ease-in-out;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, 
+                         rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, 
+                         rgba(0, 0, 0, 0.07) 0px 1px 1px;
+        }
+        
+        .blog-post-thumb .img .date {
+            width: 70px;
+            height: auto;
+        }
+        
+        .blog-post-thumb .img .date span {
+            height: 40px;
+        }
+        
+        .icon > img {
+            background: white;
+            border-radius: 10px;
+            padding: 7px;
+            min-width: 70px;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, 
+                         rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, 
+                         rgba(0, 0, 0, 0.07) 0px 1px 1px;
+        }
+        
+        @keyframes scale {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+        
+        .icon {
+            animation: scale 1.5s ease-in-out;
+        }
+        
+        .scale-this {
+            animation: scale 1.5s ease-in-out;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 1px 1px, 
+                         rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, 
+                         rgba(0, 0, 0, 0.07) 0px 1px 1px;
+        }
+        
+        .download-buttons a .download {
+            border-radius: 10px;
+        }
+        
+        .stars > li {
+            color: var(--primary-color) !important;
+        }
+        
+        .stars {
+            margin-left: 0 !important;
+        }
+        
+        .bg-dark {
+            background-color: #F0F8FF !important;
+        }
+        
+        .btn-outline-light {
+            color: var(--primary-color);
+            background-color: transparent;
+            background-image: none;
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary-line {
+            height: 55px;
+            border-radius: 10px;
+            padding: 5px;
+            font-weight: 800;
+            font-size: 14px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-line:hover {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ac .ac-header {
+            height: 70px;
+        }
+        
+        .ac-trigger > h4 {
+            font-size: 1.225rem;
+        }
+        
+        /* Feature-specific styles */
+        .feature-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: white;
+            box-shadow: 0 8px 16px rgba(66, 133, 244, 0.3);
+        }
+        
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .feature-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            list-style: none;
+        }
+        
+        .feature-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+        
+        /* Feature Overview Section */
+        .feature-overview {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 60px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-overview-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-overview-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .feature-overview-header h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 2px;
+        }
+        
+        .feature-overview-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-overview-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 25px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Feature Categories */
+        .feature-categories {
+            margin-bottom: 60px;
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .category-header h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .category-header p {
+            font-size: 16px;
+            color: #4a5568;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 60px;
+            color: white;
+        }
+        
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .testimonials-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .testimonial-content {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid white;
+        }
+        
+        .testimonial-author-info h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .testimonial-author-info p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 16px;
+            padding: 50px;
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+        
+        .cta-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-section .btn {
+            background: white;
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-section .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Media queries */
+        @media screen and (max-width: 991px) {
+            .blog-post-thumb .text.post-detail {
+                font-size: 15px !important;
+            }
+            
+            .ac-trigger > h4 {
+                color: var(--primary-color);
+                font-size: 18px !important;
+            }
+            
+            .title > h2 {
+                font-size: 18px !important;
+            }
+            
+            .app-single .item {
+                padding: 10px !important;
+            }
+            
+            .app-single .header .download-buttons a {
+                width: 100% !important;
+            }
+            
+            .app-single .header .download-buttons a .download {
+                width: 85% !important;
+                text-align: left !important;
+                margin-top: 15px !important;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .blog-post-thumb .text.post-detail {
+                font-size: 15px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="loader-wrapper">
+        <div class="center">
+            <div class="dot dot-one"></div>
+            <div class="dot dot-two"></div>
+            <div class="dot dot-three"></div>
+            <div class="dot dot-four"></div>
+            <div class="dot dot-five"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            <img src="images/logo.png" alt="RentDirect Logo" width="10" height="auto">
+                        </a>
+                        <ul class="nav">
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="features.html" class="active">FEATURES</a></li>
+                            <li><a href="pricing.html">PRICING</a></li>
+                            <li><a href="about.html">ABOUT US</a></li>
+                            <li><a href="contact.html" class="btn-nav-line">CONTACT US</a></li>
+                        </ul>
+                        <a class="menu-trigger">
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <section class="page">
+        <!-- Page Top -->
+        <div class="cover" data-image="images/cover-bg.jpg">
+            <div class="page-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>Property Management Features</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page Content -->
+        <div class="page-bottom pbottom-70" style="padding-bottom: 30px!important;">
+            <div class="container">
+                <!-- Feature Overview -->
+                <div class="feature-overview">
+                    <div class="feature-overview-header">
+                        <h2>Powerful Features for Modern Property Management</h2>
+                    </div>
+                    <div class="feature-overview-content">
+                        <p>RentPro offers a comprehensive suite of tools designed to streamline every aspect of property management. From communication to financial tracking, our platform empowers landlords to manage their properties efficiently and effectively.</p>
+                    </div>
+                </div>
+                
+                <!-- Core Features Category -->
+                <div class="feature-categories">
+                    <div class="category-header">
+                        <h3>Core Features</h3>
+                        <p>Essential tools to manage your properties with ease and efficiency</p>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-sms"></i>
+                                </div>
+                                <h3 class="feature-title">Bulk SMS & Email</h3>
+                                <p class="feature-description">Communicate efficiently with tenants and landlords through our bulk messaging system.</p>
+                                <ul class="feature-list">
+                                    <li>Send personalized messages to multiple recipients</li>
+                                    <li>Schedule messages for future delivery</li>
+                                    <li>Track delivery status and read receipts</li>
+                                    <li>Pre-built message templates</li>
+                                </ul>
+                                <a href="#" class="btn-primary-line"><i class="fa fa-info-circle fa-2x" style="font-size: 1.5em;"></i> &nbsp;Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                                <h3 class="feature-title">Debt Control</h3>
+                                <p class="feature-description">Manage and track outstanding payments with our comprehensive debt control system.</p>
+                                <ul class="feature-list">
+                                    <li>Automated payment reminders</li>
+                                    <li>Late fee calculation and application</li>
+                                    <li>Payment plan management</li>
+                                    <li>Debt aging reports</li>
+                                </ul>
+                                <a href="#" class="btn-primary-line"><i class="fa fa-info-circle fa-2x" style="font-size: 1.5em;"></i> &nbsp;Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <h3 class="feature-title">Document Management</h3>
+                                <p class="feature-description">Store, organize, and access all property-related documents in one secure location.</p>
+                                <ul class="feature-list">
+                                    <li>Secure cloud storage</li>
+                                    <li>Version control for documents</li>
+                                    <li>Access permission controls</li>
+                                    <li>Document templates</li>
+                                </ul>
+                                <a href="#" class="btn-primary-line"><i class="fa fa-info-circle fa-2x" style="font-size: 1.5em;"></i> &nbsp;Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Financial Features Category -->
+                <div class="feature-categories">
+                    <div class="category-header">
+                        <h3>Financial Management</h3>
+                        <p>Comprehensive tools to manage your property finances with precision and insight</p>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                </div>
+                                <h3 class="feature-title">Landlord Statements</h3>
+                                <p class="feature-description">Generate detailed financial statements for property owners with just a few clicks.</p>
+                                <ul class="feature-list">
+                                    <li>Automated monthly statements</li>
+                                    <li>Income and expense breakdowns</li>
+                                    <li>Customizable statement templates</li>
+                                    <li>Secure delivery options</li>
+                                </ul>
+                                <a href="#" class="btn-primary-line"><i class="fa fa-info-circle fa-2x" style="font-size: 1.5em;"></i> &nbsp;Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <h3 class="feature-title">Reports</h3>
+                                <p class="feature-description">Access comprehensive reports to analyze property performance and make informed decisions.</p>
+                                <ul class="feature-list">
+                                    <li>Occupancy reports</li>
+                                    <li>Financial performance analytics</li>
+                                    <li>Maintenance tracking reports</li>
+                                    <li>Custom report builder</li>
+                                </ul>
+                                <a href="#" class="btn-primary-line"><i class="fa fa-info-circle fa-2x" style="font-size: 1.5em;"></i> &nbsp;Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h3 class="feature-title">Updated Tenant Records</h3>
+                                <p class="feature-description">Maintain accurate and up-to-date tenant information with our comprehensive management system.</p>
+                                <ul class="feature-list">
+                                    <li>Centralized tenant database</li>
+                                    <li>Lease agreement tracking</li>
+                                    <li>Communication history</li>
+                                    <li>Automated record updates</li>
+                                </ul>
+                                <a href="#" class="btn-primary-line"><i class="fa fa-info-circle fa-2x" style="font-size: 1.5em;"></i> &nbsp;Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonials Section -->
+                <div class="testimonials-section">
+                    <div class="testimonials-header">
+                        <h2>What Our Customers Say</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="testimonial-card">
+                                <p class="testimonial-content">"RentPro has transformed how I manage my properties. The bulk SMS feature alone has saved me hours each week. Highly recommended!"</p>
+                                <div class="testimonial-author">
+                                    <img src="images/testimonial-1.jpg" alt="John Smith">
+                                    <div class="testimonial-author-info">
+                                        <h4>John Smith</h4>
+                                        <p>Property Manager, 15 units</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="testimonial-card">
+                                <p class="testimonial-content">"The debt control system is a game-changer. I've reduced late payments by 80% since implementing RentPro. It's worth every penny."</p>
+                                <div class="testimonial-author">
+                                    <img src="images/testimonial-2.jpg" alt="Sarah Johnson">
+                                    <div class="testimonial-author-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <p>Landlord, 30 units</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="testimonial-card">
+                                <p class="testimonial-content">"As someone who manages multiple properties, RentPro has been a lifesaver. The reporting features give me insights I never had before."</p>
+                                <div class="testimonial-author">
+                                    <img src="images/testimonial-3.jpg" alt="Michael Chen">
+                                    <div class="testimonial-author-info">
+                                        <h4>Michael Chen</h4>
+                                        <p>Real Estate Investor, 50+ units</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Call to Action -->
+                <div class="cta-section">
+                    <h2>Ready to Transform Your Property Management?</h2>
+                    <p>Join thousands of satisfied landlords who have streamlined their operations with RentPro. Start your free trial today and experience the difference.</p>
+                    <a href="pricing.html" class="btn">Start Free Trial</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center">
+        <div class="container p-2 pb-0">
+            <div class="row">
+                <div class="col-md-7 col-sm-12 col-lg-7" style="margin-top: 20px;">
+                    <p>© 2025 RentPro. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-1 d-sm-none col-lg-1"></div>
+                <div class="col-md-4 col-sm-12 col-lg-4" style="margin-top: 10px;">
+                    <section class="mb-4">
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://facebook.com" target="_blank" role="button">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com" target="_blank" role="button">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://google.com" target="_blank" role="button">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://linkedin.com" target="_blank" role="button">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parallax-js@3.1.0/parallax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imgfix.js/1.0.0/imgfix.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize lazy loading
+            $(function() {
+                $('.lazy').lazy({
+                    placeholder: "images/placeholder.jpg"
+                });
+            });
+        });
+    </script>
+</body>
+</html>

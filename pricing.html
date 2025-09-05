@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Property Management Blog | RentPro</title>
+    <meta name="description" content="Explore our property management blog covering tenant screening, rent collection, maintenance, legal compliance, financial management, and more. Expert insights for landlords and property managers."/>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Bootstrap & Plugins CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/accordion_1.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #2e7d32;
+        }
+        
+        /* Reusing existing styles from previous pages */
+        .blog-post-thumb .post-footer {
+            overflow: hidden;
+            border-bottom: none;
+            border-top: none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        
+        .app-single .header {
+            border-bottom: none;
+        }
+        
+        .mobile-margin { 
+            margin-top: 10px; 
+        }
+        
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: initial !important;
+            margin-left: 30px;
+        }
+        
+        .stars > li, .nav > li, .footer-nav > li, .social > li, .post-meta > li, .share > li {
+            list-style: none !important;
+            margin-left: 0;
+        }
+        
+        .blog-post-thumb .img {
+            height: 400px;
+        }
+        
+        .sidebar blockquote {
+            background: #4886FF !important;
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: -3px 1px 5px rgba(0,0,0,.4);
+            border: none;
+            border-radius: 0 5% 0 5% / 0 50% 0 50%;
+            transition: cubic-bezier(0.165, 0.84, 0.44, 1), 400ms;
+        }
+        
+        .sidebar blockquote:hover, .sidebar blockquote:focus {
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+        }
+        
+        .sidebar blockquote .download-buttons a {
+            font-size: 14px !important;
+        }
+        
+        .download {
+            animation: scale 1.5s ease-in-out;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, 
+                         rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, 
+                         rgba(0, 0, 0, 0.07) 0px 1px 1px;
+        }
+        
+        .blog-post-thumb .img .date {
+            width: 70px;
+            height: auto;
+        }
+        
+        .blog-post-thumb .img .date span {
+            height: 40px;
+        }
+        
+        .icon > img {
+            background: white;
+            border-radius: 10px;
+            padding: 7px;
+            min-width: 70px;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, 
+                         rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, 
+                         rgba(0, 0, 0, 0.07) 0px 1px 1px;
+        }
+        
+        @keyframes scale {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+        
+        .icon {
+            animation: scale 1.5s ease-in-out;
+        }
+        
+        .scale-this {
+            animation: scale 1.5s ease-in-out;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 1px 1px, 
+                         rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, 
+                         rgba(0, 0, 0, 0.07) 0px 1px 1px;
+        }
+        
+        .download-buttons a .download {
+            border-radius: 10px;
+        }
+        
+        .stars > li {
+            color: var(--primary-color) !important;
+        }
+        
+        .stars {
+            margin-left: 0 !important;
+        }
+        
+        .bg-dark {
+            background-color: #F0F8FF !important;
+        }
+        
+        .btn-outline-light {
+            color: var(--primary-color);
+            background-color: transparent;
+            background-image: none;
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary-line {
+            height: 55px;
+            border-radius: 10px;
+            padding: 5px;
+            font-weight: 800;
+            font-size: 14px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary-line:hover {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ac .ac-header {
+            height: 70px;
+        }
+        
+        .ac-trigger > h4 {
+            font-size: 1.225rem;
+        }
+        
+        /* Blog-specific styles */
+        .blog-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .blog-header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .blog-header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .blog-categories {
+            padding: 40px 0;
+            background: #f8f9fa;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .category-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .category-description {
+            font-size: 14px;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+        
+        .category-posts {
+            font-size: 14px;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .blog-posts-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 2px;
+        }
+        
+        .blog-post-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-post-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .blog-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-post-card:hover .blog-post-image img {
+            transform: scale(1.05);
+        }
+        
+        .blog-post-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .blog-post-content {
+            padding: 25px;
+        }
+        
+        .blog-post-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .blog-post-excerpt {
+            font-size: 14px;
+            color: #4a5568;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .blog-post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #718096;
+        }
+        
+        .blog-post-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-post-author img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .blog-post-date {
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-post-date i {
+            margin-right: 5px;
+        }
+        
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: var(--secondary-color);
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .read-more:hover i {
+            transform: translateX(3px);
+        }
+        
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 60px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .newsletter-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-description {
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 14px;
+        }
+        
+        .newsletter-form button {
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 30px 30px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        .sidebar-widget {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .widget-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .recent-posts-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .recent-posts-list li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .recent-posts-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .recent-post-item {
+            display: flex;
+        }
+        
+        .recent-post-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .recent-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .recent-post-content {
+            flex: 1;
+        }
+        
+        .recent-post-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 5px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .recent-post-date {
+            font-size: 12px;
+            color: #718096;
+        }
+        
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -5px;
+        }
+        
+        .tag-item {
+            background: #f0f8ff;
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .tag-item:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Media queries */
+        @media screen and (max-width: 991px) {
+            .blog-post-thumb .text.post-detail {
+                font-size: 15px !important;
+            }
+            
+            .ac-trigger > h4 {
+                color: var(--primary-color);
+                font-size: 18px !important;
+            }
+            
+            .title > h2 {
+                font-size: 18px !important;
+            }
+            
+            .app-single .item {
+                padding: 10px !important;
+            }
+            
+            .app-single .header .download-buttons a {
+                width: 100% !important;
+            }
+            
+            .app-single .header .download-buttons a .download {
+                width: 85% !important;
+                text-align: left !important;
+                margin-top: 15px !important;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .blog-post-thumb .text.post-detail {
+                font-size: 15px !important;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="loader-wrapper">
+        <div class="center">
+            <div class="dot dot-one"></div>
+            <div class="dot dot-two"></div>
+            <div class="dot dot-three"></div>
+            <div class="dot dot-four"></div>
+            <div class="dot dot-five"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="main-nav">
+                        <a href="index.html" class="logo">
+                            <img src="images/logo.png" alt="RentDirect Logo" width="80" height="auto">
+                        </a>
+                        <ul class="nav">
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="features.html">FEATURES</a></li>
+                            <li><a href="pricing.html">PRICING</a></li>
+                            <li><a href="about.html">ABOUT US</a></li>
+                            <li><a href="blog.html" class="active">BLOG</a></li>
+                            <li><a href="contact.html" class="btn-nav-line">CONTACT US</a></li>
+                        </ul>
+                        <a class="menu-trigger">
+                            <span>Menu</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Header -->
+    <div class="blog-header">
+        <div class="container">
+            <h1>Property Management Insights</h1>
+            <p>Expert advice, tips, and best practices for landlords and property managers to streamline operations and maximize returns.</p>
+        </div>
+    </div>
+
+    <!-- Blog Categories -->
+    <div class="blog-categories">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3 class="category-title">Tenant Management</h3>
+                        <p class="category-description">Screening, selection, communication, and relationship management with tenants.</p>
+                        <div class="category-posts">24 Articles</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3 class="category-title">Financial Management</h3>
+                        <p class="category-description">Rent collection, accounting, budgeting, and financial reporting for properties.</p>
+                        <div class="category-posts">18 Articles</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="category-title">Maintenance & Repairs</h3>
+                        <p class="category-description">Preventative maintenance, handling repairs, and vendor management strategies.</p>
+                        <div class="category-posts">21 Articles</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3 class="category-title">Legal & Compliance</h3>
+                        <p class="category-description">Understanding landlord-tenant laws, regulations, and compliance requirements.</p>
+                        <div class="category-posts">15 Articles</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="category-title">Property Investment</h3>
+                        <p class="category-description">Strategies for property acquisition, valuation, and portfolio growth.</p>
+                        <div class="category-posts">19 Articles</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3 class="category-title">Marketing & Leasing</h3>
+                        <p class="category-description">Effective advertising, property showing techniques, and lease negotiation tips.</p>
+                        <div class="category-posts">16 Articles</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="category-title">Property Technology</h3>
+                        <p class="category-description">Latest tools, software, and technology trends in property management.</p>
+                        <div class="category-posts">22 Articles</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="category-title">Sustainability</h3>
+                        <p class="category-description">Green practices, energy efficiency, and sustainable property management.</p>
+                        <div class="category-posts">12 Articles</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Blog Posts -->
+    <div class="blog-posts-section">
+        <div class="container">
+            <h2 class="section-title">Featured Articles</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="blog-post-card">
+                                <div class="blog-post-image">
+                                    <img src="images/blog/tenant-screening.jpg" alt="Tenant Screening Process">
+                                    <div class="blog-post-category">Tenant Management</div>
+                                </div>
+                                <div class="blog-post-content">
+                                    <h3 class="blog-post-title">Comprehensive Tenant Screening: A Landlord's Guide</h3>
+                                    <p class="blog-post-excerpt">Learn how to implement effective tenant screening processes to find reliable renters and minimize risks for your property investment.</p>
+                                    <div class="blog-post-meta">
+                                        <div class="blog-post-author">
+                                            <img src="images/author-1.jpg" alt="Sarah Johnson">
+                                            <span>Sarah Johnson</span>
+                                        </div>
+                                        <div class="blog-post-date">
+                                            <i class="far fa-calendar"></i>
+                                            <span>May 15, 2023</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="blog-post-card">
+                                <div class="blog-post-image">
+                                    <img src="images/blog/rent-collection.jpg" alt="Rent Collection Strategies">
+                                    <div class="blog-post-category">Financial Management</div>
+                                </div>
+                                <div class="blog-post-content">
+                                    <h3 class="blog-post-title">5 Effective Rent Collection Strategies for Landlords</h3>
+                                    <p class="blog-post-excerpt">Discover proven methods to streamline rent collection, reduce late payments, and maintain consistent cash flow for your properties.</p>
+                                    <div class="blog-post-meta">
+                                        <div class="blog-post-author">
+                                            <img src="images/author-2.jpg" alt="Michael Chen">
+                                            <span>Michael Chen</span>
+                                        </div>
+                                        <div class="blog-post-date">
+                                            <i class="far fa-calendar"></i>
+                                            <span>May 8, 2023</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="blog-post-card">
+                                <div class="blog-post-image">
+                                    <img src="images/blog/property-maintenance.jpg" alt="Property Maintenance">
+                                    <div class="blog-post-category">Maintenance & Repairs</div>
+                                </div>
+                                <div class="blog-post-content">
+                                    <h3 class="blog-post-title">Preventative Maintenance: Saving Money Long-Term</h3>
+                                    <p class="blog-post-excerpt">Implement a preventative maintenance plan to reduce costly repairs, extend property lifespan, and increase tenant satisfaction.</p>
+                                    <div class="blog-post-meta">
+                                        <div class="blog-post-author">
+                                            <img src="images/author-3.jpg" alt="Emily Davis">
+                                            <span>Emily Davis</span>
+                                        </div>
+                                        <div class="blog-post-date">
+                                            <i class="far fa-calendar"></i>
+                                            <span>May 1, 2023</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="blog-post-card">
+                                <div class="blog-post-image">
+                                    <img src="images/blog/legal-compliance.jpg" alt="Legal Compliance">
+                                    <div class="blog-post-category">Legal & Compliance</div>
+                                </div>
+                                <div class="blog-post-content">
+                                    <h3 class="blog-post-title">Landlord-Tenant Laws: What You Need to Know</h3>
+                                    <p class="blog-post-excerpt">Stay compliant with current landlord-tenant laws, understand your rights and responsibilities, and avoid legal disputes.</p>
+                                    <div class="blog-post-meta">
+                                        <div class="blog-post-author">
+                                            <img src="images/author-4.jpg" alt="David Wilson">
+                                            <span>David Wilson</span>
+                                        </div>
+                                        <div class="blog-post-date">
+                                            <i class="far fa-calendar"></i>
+                                            <span>April 24, 2023</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Recent Posts</h3>
+                        <ul class="recent-posts-list">
+                            <li>
+                                <div class="recent-post-item">
+                                    <div class="recent-post-image">
+                                        <img src="images/blog/recent-1.jpg" alt="Property Valuation">
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <h4 class="recent-post-title">How to Accurately Value Your Rental Property</h4>
+                                        <div class="recent-post-date">April 20, 2023</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="recent-post-item">
+                                    <div class="recent-post-image">
+                                        <img src="images/blog/recent-2.jpg" alt="Virtual Tours">
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <h4 class="recent-post-title">Creating Effective Virtual Property Tours</h4>
+                                        <div class="recent-post-date">April 15, 2023</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="recent-post-item">
+                                    <div class="recent-post-image">
+                                        <img src="images/blog/recent-3.jpg" alt="Energy Efficiency">
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <h4 class="recent-post-title">Energy Efficiency Upgrades That Pay Off</h4>
+                                        <div class="recent-post-date">April 10, 2023</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="recent-post-item">
+                                    <div class="recent-post-image">
+                                        <img src="images/blog/recent-4.jpg" alt="Property Management Software">
+                                    </div>
+                                    <div class="recent-post-content">
+                                        <h4 class="recent-post-title">Choosing the Right Property Management Software</h4>
+                                        <div class="recent-post-date">April 5, 2023</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Popular Tags</h3>
+                        <div class="tags-list">
+                            <a href="#" class="tag-item">Tenant Screening</a>
+                            <a href="#" class="tag-item">Rent Collection</a>
+                            <a href="#" class="tag-item">Property Maintenance</a>
+                            <a href="#" class="tag-item">Legal Compliance</a>
+                            <a href="#" class="tag-item">Investment</a>
+                            <a href="#" class="tag-item">Marketing</a>
+                            <a href="#" class="tag-item">Technology</a>
+                            <a href="#" class="tag-item">Sustainability</a>
+                            <a href="#" class="tag-item">Eviction</a>
+                            <a href="#" class="tag-item">Insurance</a>
+                            <a href="#" class="tag-item">Taxes</a>
+                            <a href="#" class="tag-item">Lease Agreements</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="newsletter-section">
+        <div class="container">
+            <h2 class="newsletter-title">Stay Updated with Property Management Insights</h2>
+            <p class="newsletter-description">Subscribe to our newsletter for the latest articles, tips, and industry trends delivered to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center">
+        <div class="container p-2 pb-0">
+            <div class="row">
+                <div class="col-md-7 col-sm-12 col-lg-7" style="margin-top: 20px;">
+                    <p>© 2025 RentPro. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-1 d-sm-none col-lg-1"></div>
+                <div class="col-md-4 col-sm-12 col-lg-4" style="margin-top: 10px;">
+                    <section class="mb-4">
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://facebook.com" target="_blank" role="button">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com" target="_blank" role="button">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://google.com" target="_blank" role="button">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-floating m-1" href="https://linkedin.com" target="_blank" role="button">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parallax-js@3.1.0/parallax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imgfix.js/1.0.0/imgfix.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize lazy loading
+            $(function() {
+                $('.lazy').lazy({
+                    placeholder: "images/placeholder.jpg"
+                });
+            });
+        });
+    </script>
+</body>
+</html>

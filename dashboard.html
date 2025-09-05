@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentDirect Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="flex bg-gray-100 h-screen">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-gray-800 text-white p-6">
+    <h2 class="text-2xl font-bold mb-6">RentDirect</h2>
+    <nav>
+      <ul class="space-y-4">
+        <li><a href="#" class="hover:text-yellow-400">🏠 Landlords</a></li>
+        <li><a href="#" class="hover:text-yellow-400">👥 Tenants</a></li>
+        <li><a href="#" class="hover:text-yellow-400">🏘 Properties</a></li>
+        <li><a href="#" class="hover:text-yellow-400">💰 Rent</a></li>
+        <li><a href="#" class="hover:text-yellow-400">📊 Analytics</a></li>
+        <li><a href="#" class="hover:text-yellow-400">📑 Reports</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="flex-1 p-6 overflow-y-auto">
+    <h1 class="text-3xl font-bold mb-6">Dashboard</h1>
+
+    <!-- Top Cards -->
+    <div class="grid grid-cols-3 gap-6 mb-6">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="text-lg font-semibold">Total Income</h3>
+        <p class="text-2xl font-bold text-green-600">Ugx. 253,000</p>
+        <span class="text-sm text-gray-500">+23.5% from last month</span>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="text-lg font-semibold">Rent Collection</h3>
+        <p class="text-2xl font-bold text-blue-600">75%</p>
+        <span class="text-sm text-gray-500">Collected on time</span>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="text-lg font-semibold">Arrears</h3>
+        <p class="text-2xl font-bold text-red-600">Ugx. 50,000</p>
+        <span class="text-sm text-gray-500">Outstanding</span>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="grid grid-cols-2 gap-6">
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-lg font-semibold mb-4">Income vs Expenses</h3>
+        <canvas id="lineChart"></canvas>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="text-lg font-semibold mb-4">Rent Collection</h3>
+        <canvas id="pieChart"></canvas>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Line Chart
+    new Chart(document.getElementById('lineChart'), {
+      type: 'line',
+      data: {
+        labels: ['2018', '2019', '2020', '2021', '2022'],
+        datasets: [
+          {
+            label: 'Income',
+            data: [50000, 80000, 120000, 180000, 253000],
+            borderColor: 'green',
+            fill: false
+          },
+          {
+            label: 'Expenses',
+            data: [30000, 50000, 70000, 100000, 150000],
+            borderColor: 'red',
+            fill: false
+          }
+        ]
+      }
+    });
+
+    // Pie Chart
+    new Chart(document.getElementById('pieChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Collected', 'Pending', 'Overdue'],
+        datasets: [{
+          data: [65, 20, 15],
+          backgroundColor: ['#3B82F6', '#FACC15', '#EF4444']
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
